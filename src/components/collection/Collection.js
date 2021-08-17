@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import { pageTransition } from "../../classes/Constants";
 
 const Collections = () => {
+  document.body.style.background = "rgb(235, 235, 235)";
+
   const [stash, setStash] = useState(
     JSON.parse(sessionStorage.getItem("stash")) || []
   );
@@ -16,6 +18,16 @@ const Collections = () => {
   const [animating, setAnimating] = useState(false);
 
   const [searchItem, setSearchItem] = useState("");
+
+  const hasWished = () => {
+    let hasWished = false;
+    if (stash.length === 0) return hasWished;
+    stash.map((item) => {
+      if (item.count > 0) hasWished = true;
+      return item;
+    });
+    return hasWished;
+  };
 
   const [activeFilters, setActiveFilters] = useState([
     "Default",
@@ -33,8 +45,7 @@ const Collections = () => {
     "5-Star",
     "4-Star",
     "3-Star",
-    "Unlocked",
-    "Locked",
+    hasWished() ? "Unlocked" : "Locked",
   ]);
 
   const [activeItem, setActiveItem] = useState(
@@ -42,6 +53,16 @@ const Collections = () => {
       ? stash.filter((item) => item.count > 0)[0]
       : stash[0]
   );
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!loading) return;
+    var loadDelay = setTimeout(() => setLoading(false), 400);
+    return () => {
+      clearTimeout(loadDelay);
+    };
+  }, []);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -78,16 +99,16 @@ const Collections = () => {
       animate="in"
       variants={pageTransition}
     >
-      <div
-        className="background"
-        style={{
-          background: "rgb(235, 235, 235)",
-        }}
-      />
       <section id="collection-content">
-        <Info item={activeItem} animating={animating} resize={resize} />
+        <Info
+          item={activeItem}
+          animating={animating}
+          loading={loading}
+          resize={resize}
+        />
         <CollectionIcons
           activeFilters={activeFilters}
+          loading={loading}
           stash={stash}
           setStash={setStash}
           setAnimating={setAnimating}

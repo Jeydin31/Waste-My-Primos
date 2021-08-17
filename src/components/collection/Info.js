@@ -3,7 +3,7 @@ import { allChars } from "../../classes/Constants";
 import { allBanners } from "../../classes/Banner";
 import axios from "axios";
 
-const Info = ({ item, animating, resize }) => {
+const Info = ({ item, animating, loading, resize }) => {
   const isChar = (item) => allChars.includes(item);
 
   const [bannerData, setBannerData] = useState([]);
@@ -170,59 +170,65 @@ const Info = ({ item, animating, resize }) => {
   return (
     <section id="collection-info-section">
       <div
-        id="item-info"
         style={{
-          height: "550px",
+          opacity: `${loading ? "0" : "1"}`,
         }}
       >
-        <h3>{itemInfo.name}</h3>
         <div
-          id="item-type"
+          id="item-info"
           style={{
-            backgroundImage: `url(${getTypeIcon(itemInfo.typeId)})`,
-            height: "115px",
-            width: "115px",
-            backgroundSize: "contain",
-            backgroundPosition: "center",
+            height: "550px",
           }}
-          animating={animating ? "true" : "false"}
-          locked={item.count === 0 ? "true" : "false"}
-        />
-        <div
-          id="item-portrait"
-          animating={animating ? "true" : "false"}
-          locked={item.count === 0 ? "true" : "false"}
-          style={{
-            backgroundImage: `url(${itemInfo.portrait})`,
-            backgroundSize: `${
-              getType(itemInfo.typeId) === "Catalyst"
-                ? "350px 350px"
-                : "contain"
-            }`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            height: "inherit",
-            width: "inherit",
-          }}
-        />
-        <div id="stars-container">
-          {Array(itemInfo.rarity)
-            .fill()
-            .map((e, i) => {
-              return starPrinter(i);
-            })}
-        </div>
-      </div>
+        >
+          <h3>{itemInfo.name}</h3>
+          <div
+            id="item-portrait"
+            animating={animating ? "true" : "false"}
+            locked={item.count === 0 ? "true" : "false"}
+            style={{
+              backgroundImage: `url(${itemInfo.portrait})`,
+              backgroundSize: `${
+                getType(itemInfo.typeId) === "Catalyst"
+                  ? "350px 350px"
+                  : "contain"
+              }`,
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              height: "inherit",
+              width: "inherit",
+            }}
+          />
+          <div
+            id="item-type"
+            style={{
+              backgroundImage: `url(${getTypeIcon(itemInfo.typeId)})`,
+              height: "115px",
+              width: "115px",
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+            }}
+            animating={animating ? "true" : "false"}
+            locked={item.count === 0 ? "true" : "false"}
+          />
 
-      <h3>Count: {item.count}</h3>
-      {}
-      {isChar(item.itemId) ? (
-        <h3>Character stats here</h3>
-      ) : (
-        <h3>gimme weapon stats</h3>
-      )}
-      <h3>What banner am I in?</h3>
-      <ul>{findBanner(item.itemId)}</ul>
+          <div id="stars-container">
+            {Array(itemInfo.rarity)
+              .fill()
+              .map((e, i) => {
+                return starPrinter(i);
+              })}
+          </div>
+        </div>
+        <h3>Count: {item.count}</h3>
+        {}
+        {isChar(item.itemId) ? (
+          <h3>Character stats here</h3>
+        ) : (
+          <h3>gimme weapon stats</h3>
+        )}
+        <h3>What banner am I in?</h3>
+        <ul>{findBanner(item.itemId)}</ul>{" "}
+      </div>
     </section>
   );
 };

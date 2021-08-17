@@ -14,6 +14,8 @@ import { UserContext } from "../UserContext";
 import { motion } from "framer-motion";
 
 const Login = () => {
+  document.body.style.background = "rgb(235, 235, 235)";
+
   const { user, setUser } = useContext(UserContext);
 
   // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -70,12 +72,6 @@ const Login = () => {
       animate="in"
       variants={pageTransition}
     >
-      <div
-        className="background"
-        style={{
-          background: "rgb(235, 235, 235)",
-        }}
-      />
       <Container
         className="login-container"
         style={{ backgroundColor: "black" }}

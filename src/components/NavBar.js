@@ -49,7 +49,7 @@ const NavBar = ({ resize }) => {
               My Collection
             </NavLink>
           </NavItem>
-          <NavItem>
+          {/* <NavItem>
             <NavLink
               tag={RRNavLink}
               exact
@@ -65,7 +65,7 @@ const NavBar = ({ resize }) => {
             >
               Login
             </NavLink>
-          </NavItem>
+          </NavItem> */}
         </Nav>
       </Navbar>
     </section>

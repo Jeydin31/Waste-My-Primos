@@ -9,6 +9,8 @@ import { motion } from "framer-motion";
 import { pageTransition } from "../../classes/Constants";
 
 const HistoryContent = ({ location }) => {
+  document.body.style.background = "rgb(235, 235, 235)";
+
   const MAX_PAG = 10;
 
   const history = location.state ? location.state.history : [[], [], []];
@@ -63,12 +65,6 @@ const HistoryContent = ({ location }) => {
       animate="in"
       variants={pageTransition}
     >
-      <div
-        className="background"
-        style={{
-          background: "rgb(235, 235, 235)",
-        }}
-      />
       <section id="collection-top-section">
         <div id="history-wish-select">
           <p

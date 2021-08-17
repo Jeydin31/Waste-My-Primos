@@ -10,6 +10,17 @@
         "gachaMulti": "../assets/img/gacha/multi/albedo.webp",
         "thumb": "../assets/img/thumb/albedo.webp"
     },
+	{
+        "name": "Hu Tao",
+        "vision": "Pyro",
+        "weapon": "Polearm",
+        "rarity": 5,
+        "description": "",
+        "constellations": [],
+        "gachaSingle": "../assets/img/gacha/single/hu_tao.webp",
+        "gachaMulti": "../assets/img/gacha/multi/hu_tao.webp",
+        "thumb": "../assets/img/thumb/hu_tao.webp"
+    },
     {
         "name": "Amber",
         "vision": "Pyro",

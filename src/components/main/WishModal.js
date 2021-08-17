@@ -9,7 +9,6 @@ const WishModal = ({
   skipAll,
   charData,
   weaponData,
-  typeData,
   resize,
 }) => {
   const getStars = (item) => {

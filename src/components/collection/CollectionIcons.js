@@ -5,6 +5,7 @@ import axios from "axios";
 export default function CollectionIcons({
   activeFilters,
   activeItem,
+  loading,
   setActiveItem,
   setAnimating,
   stash,
@@ -297,6 +298,7 @@ export default function CollectionIcons({
                   margin: `${resize.getWidth(5)}px`,
                   height: `${resize.getWidth(106)}px`,
                   width: `${resize.getWidth(106)}px`,
+                  opacity: `${loading ? "0" : "1"}`,
                 }}
               >
                 <div
@@ -351,6 +353,7 @@ export default function CollectionIcons({
                   margin: `${resize.getWidth(5)}px`,
                   height: `${resize.getWidth(106)}px`,
                   width: `${resize.getWidth(106)}px`,
+                  opacity: `${loading ? "0" : "1"}`,
                 }}
               >
                 <div

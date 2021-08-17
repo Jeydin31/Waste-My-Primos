@@ -203,6 +203,26 @@
         "gachaMulti": "../assets/img/gacha/multi/lion's_roar.webp",
         "thumb": "../assets/img/thumb/lions_roar.webp"
     },
+	{
+        "name": "Lithic Blade",
+        "type": "Claymore",
+        "rarity": 4,
+        "baseAttack": "42",
+        "subStat": "ATK",
+        "gachaSingle": "../assets/img/gacha/single/lithic_blade.webp",
+        "gachaMulti": "../assets/img/gacha/multi/lithic_blade.webp",
+        "thumb": "../assets/img/thumb/lithic_blade.webp"
+    },
+	{
+        "name": "Lithic Spear",
+        "type": "Polearm",
+        "rarity": 4,
+        "baseAttack": "44",
+        "subStat": "ATK",
+        "gachaSingle": "../assets/img/gacha/single/lithic_spear.webp",
+        "gachaMulti": "../assets/img/gacha/multi/lithic_spear.webp",
+        "thumb": "../assets/img/thumb/lithic_spear.webp"
+    },
     {
         "name": "Lost Prayer to the Sacred Winds",
         "type": "Catalyst",
@@ -250,6 +270,26 @@
         "gachaSingle": "../assets/img/gacha/single/primordial_jade_winged-spear.webp",
         "gachaMulti": "../assets/img/gacha/multi/primordial_jade_winged-spear.webp",
         "thumb": "../assets/img/thumb/primordial_jade_winged-spear.webp"
+    },
+	{
+        "name": "Primordial Jade Cutter",
+        "type": "Sword",
+        "rarity": 5,
+        "baseAttack": "44",
+        "subStat": "CRIT Rate",
+        "gachaSingle": "../assets/img/gacha/single/primordial_jade_cutter.webp",
+        "gachaMulti": "../assets/img/gacha/multi/primordial_jade_cutter.webp",
+        "thumb": "../assets/img/thumb/primordial_jade_cutter.webp"
+    },
+	{
+        "name": "Staff of Homa",
+        "type": "Polearm",
+        "rarity": 5,
+        "baseAttack": "46",
+        "subStat": "CRIT DMG",
+        "gachaSingle": "../assets/img/gacha/single/staff_of_homa.webp",
+        "gachaMulti": "../assets/img/gacha/multi/staff_of_homa.webp",
+        "thumb": "../assets/img/thumb/staff_of_homa.webp"
     },
     {
         "name": "Rainslasher",

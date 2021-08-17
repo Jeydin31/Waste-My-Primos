@@ -10,6 +10,7 @@ import Main from "./components/main/Main";
 import Collection from "./components/collection/Collection";
 import Login from "./components/login/Login";
 import HistoryContent from "./components/history/HistoryContent";
+import DetailsContent from "./components/details/DetailsContent";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import { UserContext } from "./components/UserContext";
@@ -66,6 +67,7 @@ const Test = () => {
             <Route path="/myCollection" component={Collection} />
             <Route path="/login" component={Login} />
             <Route path="/history" component={HistoryContent} />
+            <Route path="/details" component={DetailsContent} />
           </UserContext.Provider>
         </Switch>
       </AnimatePresence>

@@ -1,6 +1,6 @@
 export const pageTransition = {
-  in: { opacity: 1 },
-  out: { opacity: 0 },
+  in: { opacity: 1, y: 0 },
+  out: { opacity: 0, y: -100 },
 };
 
 export const baseThreeStar = [
@@ -47,6 +47,8 @@ const allChars = [
   "5fff752a9d4d2c31707c5fa4",
   "5fff752a9d4d2c31707c5fa5",
   "5fff752a9d4d2c31707c5fa6",
+  "602c3666d01ba340641c2a23",
+  "6064ac424f77a33290ae7647",
 ];
 
 const allWeapons = [
@@ -95,9 +97,17 @@ const allWeapons = [
   "5fff75319d4d2c31707c5fd1",
   "5fff75319d4d2c31707c5fd2",
   "5fff75319d4d2c31707c5fd3",
+  "602c370cd01ba340641c2a24",
+  "6064ad024f77a33290ae7648",
+  "6064f9348295983a60226eb1",
+  "6064f9898295983a60226eb2",
 ];
 
 const allBannersAbbr = [
+  "606403e57a000b35e8589c4c",
+  "606404057a000b35e8589c4d",
+  "602c37eed01ba340641c2a25",
+  "602c383ad01ba340641c2a26",
   "5fff6b9b9d4d2c31707c5eb6",
   "5fff6b9b9d4d2c31707c5eb7",
   "5fff6b9b9d4d2c31707c5eb8",

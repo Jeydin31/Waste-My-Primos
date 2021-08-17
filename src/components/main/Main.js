@@ -24,7 +24,19 @@ import {
 import axios from "axios";
 import { motion } from "framer-motion";
 
+const bodyStyle = {
+  background:
+    "url(../assets/img/misc/background.webp) no-repeat center center fixed",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center",
+  backgroundSize: "cover",
+  height: "100vh",
+  width: "100vw",
+};
+
 const Main = () => {
+  Object.assign(document.body.style, bodyStyle);
+
   const [state, setState] = useState({
     isModalOpen: false,
     wishes: 0,
@@ -43,8 +55,8 @@ const Main = () => {
   );
 
   const [activeBanners, setActiveBanners] = useState([
-    "5fff6b9b9d4d2c31707c5eb6",
-    "5fff6b9b9d4d2c31707c5eb7",
+    "606404057a000b35e8589c4d",
+    "606403e57a000b35e8589c4c",
     "5fff6b9b9d4d2c31707c5ec2",
   ]);
 
@@ -406,6 +418,22 @@ const Main = () => {
               >
                 <Button context="History" resize={resize} />
               </Link>
+              <Link
+                to={{
+                  pathname: "/details",
+                  state: {
+                    activeBanner: bannerContent[currentBannerIndex].banner,
+                  },
+                }}
+                style={{ textDecoration: "none" }}
+                onClick={() => {
+                  sessionStorage.setItem("bannerIndex", currentBannerIndex);
+                  sessionStorage.setItem("skipVideo", state.skipVideo);
+                  sessionStorage.setItem("skipSingle", state.skipSingle);
+                }}
+              >
+                <Button context="Details" resize={resize} />
+              </Link>
               <WishButtons
                 onWish={handleWish}
                 activeIndex={currentBannerIndex}
@@ -434,6 +462,13 @@ const Main = () => {
     } else
       return (
         <section>
+          <div
+            className="background"
+            style={{
+              backgroundImage: "url(../assets/img/misc/background.webp)",
+              zIndex: `${content === "main" ? "-1" : "1050"}`,
+            }}
+          />
           <CloseButton
             onClick={() => {
               setState({ ...state, animating: false });
@@ -492,13 +527,6 @@ const Main = () => {
       animate="in"
       variants={pageTransition}
     >
-      <div
-        className="background"
-        style={{
-          backgroundImage: "url(../assets/img/misc/background.webp)",
-          zIndex: `${content === "main" ? "-1" : "1050"}`,
-        }}
-      />
       {handleContent()}
       <WishModal
         props={state}
